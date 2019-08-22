@@ -6,5 +6,5 @@ function setup() {
 function draw() {
   // put drawing code here
 
-  ellipse(mouseX, mouseY, 10, 10) ;
+  rect(mouseX, mouseY, 10, 10) ;
 }
