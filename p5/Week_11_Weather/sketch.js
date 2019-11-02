@@ -7,7 +7,7 @@ var ws = 0;
 
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
 
   // HERE Is the call to get the weather. PLEASE PUT YOUR OWN ID IN HERE!!!
   // MINE WILL STOP WORKING IF EVERYONE USES IT!!!
@@ -53,7 +53,7 @@ function draw() {
       fill('red');
       var mappedTemp = 0;
       mappedTemp = map(temperature, -10, 100, 0, height);
-      rect(width-30, height-10, 20, mappedTemp);
+      rect(width - 30, height - 10, 20, mappedTemp);
       // parse the weather object and put some text for some at least 3 different weather data!
       break;
 
