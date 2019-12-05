@@ -23,7 +23,7 @@ function draw() {
     case 0: // splash screen
       background(100);
       fill('gray');
-      text("Welcome to my DeathStar, \n Don't let the Rebels escape with the data, \n Click to Start!", 150, 250);
+      text("Welcome to the DeathStar, \n Don't let the Rebels escape with the data, \n Click to Start!", 150, 250);
       textAlign('CENTER');
       textSize(50);
       break;
