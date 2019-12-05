@@ -7,12 +7,14 @@ function setup() {
 
   function setup() {
     createCanvas(800, 800) ;
+    fill('dark red')  ;
     textAlign(CENTER, CENTER) ;
   }
 
   function draw() {
     background(100) ;
     textSize(48);
+    textColor(light gray)
     text(aRandomBand, width/2, height/2) ;
   }
 
