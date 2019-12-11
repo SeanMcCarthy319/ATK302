@@ -4,6 +4,7 @@ var myState = 0;
 var myTimer = 0;
 
 
+
 function setup() {
   // put setup code here
   createCanvas(800, 800);
@@ -83,18 +84,15 @@ function Car() {
   this.pos = createVector(100, 100);
   this.vel = createVector(random(-5, 5), random(-5, 5));
   //this.y = random(height);
-  this.r = random(255);
-  this.g = random(255);
-  this.b = random(255);
+  fill('black');
   //this.vel = random(5, 10);
 
   //methods
   this.display = function() {
-    fill(this.r, this.g, this.b);
-    rect(this.pos.x, this.pos.y, 100, 50);
+    fill('white');
+    ellipse(this.pos.x, this.pos.y, 100, 50);
     fill('black');
-    ellipse(this.pos.x + 20, this.pos.y + 50, 25, 25);
-    ellipse(this.pos.x + 80, this.pos.y + 50, 25, 25);
+    ellipse(this.pos.x + 10, this.pos.y + 0, 50, 50);
 
   }
 
@@ -138,7 +136,7 @@ function game() {
     myState = 2;
   }
 
-  fill('light green');
+  fill('red');
   ellipse(frogPos.x, frogPos.y, 60, 60);
   checkForKeys();
 }

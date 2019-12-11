@@ -30,15 +30,15 @@ function draw() {
 
     case 0: // trigger the playing, and go immediately to the next state
       song1.play();
-      myState = 1;  // go immediately (the next time) to the next state
+      myState = 1; // go immediately (the next time) to the next state
       break;
 
 
     case 1:
-    // hang out in here, put some lyrics or pictures or something while the song plays.
-    // put pictures and shapes in here
+      // hang out in here, put some lyrics or pictures or something while the song plays.
+      // put pictures and shapes in here
 
-      break;  // we would only leave state 1 with a mouseClick
+      break; // we would only leave state 1 with a mouseClick
 
 
 
