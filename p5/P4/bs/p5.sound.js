@@ -44,7 +44,7 @@
  */
 
 /**
- *  p5.sound 
+ *  p5.sound
  *  https://p5js.org/reference/#/libraries/p5.sound
  *
  *  From the Processing Foundation and contributors
@@ -72,7 +72,7 @@
   else
     factory(root['p5']);
 }(this, function (p5) {
-  
+
 var shims;
 'use strict';  /**
                 * This module has shims
@@ -1509,7 +1509,7 @@ errorHandler = function () {
       Helper function to generate an error
       with a custom stack trace that points to the sketch
       and removes other parts of the stack trace.
-  
+
       @private
       @class customError
       @constructor
@@ -3066,7 +3066,7 @@ soundfile = function () {
    * Save a p5.SoundFile as a .wav file. The browser will prompt the user
    * to download the file to their device. To upload a file to a server, see
    * <a href="/docs/reference/#/p5.SoundFile/getBlob">getBlob</a>
-   * 
+   *
    * @method save
    * @param  {String} [fileName]      name of the resulting .wav file.
    * @example
@@ -3100,7 +3100,7 @@ soundfile = function () {
    * use the `httpDo` options object to send a POST request with some
    * specific options: we encode the request as `multipart/form-data`,
    * and attach the blob as one of the form values using `FormData`.
-   * 
+   *
    *
    * @method getBlob
    * @returns {Blob} A file-like data object
@@ -3875,7 +3875,7 @@ fft = function () {
      *    var rectangle_width = (log(i+1)-log(i))*(width/log(spectrum.length));
      *    rect(x, height, rectangle_width, -h )
      *  }
-  
+
      *  var nyquist = 22050;
      *
      *  // get the centroid
@@ -8356,25 +8356,25 @@ effect = function () {
   var CrossFade = Tone_component_CrossFade;
   /**
    * Effect is a base class for audio effects in p5. <br>
-   * This module handles the nodes and methods that are 
+   * This module handles the nodes and methods that are
    * common and useful for current and future effects.
    *
    *
-   * This class is extended by <a href="/reference/#/p5.Distortion">p5.Distortion</a>, 
+   * This class is extended by <a href="/reference/#/p5.Distortion">p5.Distortion</a>,
    * <a href="/reference/#/p5.Compressor">p5.Compressor</a>,
-   * <a href="/reference/#/p5.Delay">p5.Delay</a>, 
-   * <a href="/reference/#/p5.Filter">p5.Filter</a>, 
+   * <a href="/reference/#/p5.Delay">p5.Delay</a>,
+   * <a href="/reference/#/p5.Filter">p5.Filter</a>,
    * <a href="/reference/#/p5.Reverb">p5.Reverb</a>.
    *
    * @class  p5.Effect
    * @constructor
-   * 
+   *
    * @param {Object} [ac]   Reference to the audio context of the p5 object
    * @param {AudioNode} [input]  Gain Node effect wrapper
    * @param {AudioNode} [output] Gain Node effect wrapper
    * @param {Object} [_drywet]   Tone.JS CrossFade node (defaults to value: 1)
    * @param {AudioNode} [wet]  Effects that extend this class should connect
-   *                              to the wet signal to this gain node, so that dry and wet 
+   *                              to the wet signal to this gain node, so that dry and wet
    *                              signals are mixed properly.
    */
   p5.Effect = function () {
@@ -8402,10 +8402,10 @@ effect = function () {
   };
   /**
    *  Set the output volume of the filter.
-   *  
+   *
    *  @method  amp
    *  @param {Number} [vol] amplitude between 0 and 1.0
-   *  @param {Number} [rampTime] create a fade that lasts until rampTime 
+   *  @param {Number} [rampTime] create a fade that lasts until rampTime
    *  @param {Number} [tFromNow] schedule this event to happen in tFromNow seconds
    */
   p5.Effect.prototype.amp = function (vol, rampTime, tFromNow) {
@@ -8418,12 +8418,12 @@ effect = function () {
     this.output.gain.linearRampToValueAtTime(vol, now + tFromNow + rampTime + 0.001);
   };
   /**
-   *	Link effects together in a chain	
+   *	Link effects together in a chain
    *	Example usage: filter.chain(reverb, delay, panner);
    *	May be used with an open-ended number of arguments
    *
-   *	@method chain 
-     *  @param {Object} [arguments]  Chain together multiple sound objects	
+   *	@method chain
+     *  @param {Object} [arguments]  Chain together multiple sound objects
    */
   p5.Effect.prototype.chain = function () {
     if (arguments.length > 0) {
@@ -8435,8 +8435,8 @@ effect = function () {
     return this;
   };
   /**
-   *	Adjust the dry/wet value.	
-   *	
+   *	Adjust the dry/wet value.
+   *
    *	@method drywet
    *	@param {Number} [fade] The desired drywet value (0 - 1.0)
    */
@@ -8448,19 +8448,19 @@ effect = function () {
   };
   /**
    *	Send output to a p5.js-sound, Web Audio Node, or use signal to
-   *	control an AudioParam	
-   *	
-   *	@method connect 
-   *	@param {Object} unit 
+   *	control an AudioParam
+   *
+   *	@method connect
+   *	@param {Object} unit
    */
   p5.Effect.prototype.connect = function (unit) {
     var u = unit || p5.soundOut.input;
     this.output.connect(u.input ? u.input : u);
   };
   /**
-   *	Disconnect all output.	
-   *	
-   *	@method disconnect 
+   *	Disconnect all output.
+   *
+   *	@method disconnect
    */
   p5.Effect.prototype.disconnect = function () {
     if (this.output) {
@@ -8512,9 +8512,9 @@ filter = function () {
    *  The <code>.res()</code> method controls either width of the
    *  bandpass, or resonance of the low/highpass cutoff frequency.
    *
-   *  This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.  
-   *  Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>, 
-   *  <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and 
+   *  This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.
+   *  Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>,
+   *  <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and
    *  <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are available.
    *
    *  @class p5.Filter
@@ -8677,7 +8677,7 @@ filter = function () {
    * p5.Filter.gain() controls the gain parameter of a Biquad Filter node.
    *
    * @method gain
-   * @param  {Number} gain 
+   * @param  {Number} gain
    * @return {Number} Returns the current or updated gain value
    */
   p5.Filter.prototype.gain = function (gain, time) {
@@ -8853,40 +8853,40 @@ eq = function () {
    * var eq;
    * var band_names;
    * var band_index;
-   * 
+   *
    * var soundFile, play;
-   * 
+   *
    * function preload() {
    *   soundFormats('mp3', 'ogg');
    *   soundFile = loadSound('assets/beat');
    * }
-   * 
+   *
    * function setup() {
    *   eq = new p5.EQ(3);
    *   soundFile.disconnect();
    *   eq.process(soundFile);
-   * 
+   *
    *   band_names = ['lows','mids','highs'];
    *   band_index = 0;
    *   play = false;
    *   textAlign(CENTER);
    * }
-   * 
+   *
    * function draw() {
    *   background(30);
    *   noStroke();
    *   fill(255);
    *   text('click to kill',50,25);
-   * 
+   *
    *   fill(255, 40, 255);
    *   textSize(26);
    *   text(band_names[band_index],50,55);
-   * 
+   *
    *   fill(255);
    *   textSize(9);
    *   text('space = play/pause',50,80);
    * }
-   * 
+   *
    * //If mouse is over canvas, cycle to the next band and kill the frequency
    * function mouseClicked() {
    *   for (var i = 0; i < eq.bands.length; i++) {
@@ -8897,7 +8897,7 @@ eq = function () {
    *     band_index === 2 ? band_index = 0 : band_index++;
    *   }
    * }
-   * 
+   *
    * //use space bar to trigger play / pause
    * function keyPressed() {
    *   if (key===' ') {
@@ -8915,7 +8915,7 @@ eq = function () {
     _eqsize === 3 ? factor = Math.pow(2, 3) : factor = 2;
     /**
       *  The p5.EQ is built with abstracted p5.Filter objects.
-      *  To modify any bands, use methods of the <a 
+      *  To modify any bands, use methods of the <a
       *  href="/reference/#/p5.Filter" title="p5.Filter reference">
       *  p5.Filter</a> API, especially `gain` and `freq`.
       *  Bands are stored in an array, with indices 0 - 3, or 0 - 7
@@ -9252,13 +9252,13 @@ listener3d = function () {
   var Effect = effect;
   //  /**
   //   * listener is a class that can construct both a Spatial Panner
-  //   * and a Spatial Listener. The panner is based on the 
+  //   * and a Spatial Listener. The panner is based on the
   //   * Web Audio Spatial Panner Node
   //   * https://www.w3.org/TR/webaudio/#the-listenernode-interface
   //   * This panner is a spatial processing node that allows audio to be positioned
-  //   * and oriented in 3D space. 
+  //   * and oriented in 3D space.
   //   *
-  //   * The Listener modifies the properties of the Audio Context Listener. 
+  //   * The Listener modifies the properties of the Audio Context Listener.
   //   * Both objects types use the same methods. The default is a spatial panner.
   //   *
   //   * <code>p5.Panner3D</code> - Constructs a Spatial Panner<br/>
@@ -9342,7 +9342,7 @@ listener3d = function () {
   // cannot define method when class definition is commented
   //  /**
   //   * Overrides the listener orient() method because Listener has slightly
-  //   * different params. In human terms, Forward vectors are the direction the 
+  //   * different params. In human terms, Forward vectors are the direction the
   //   * nose is pointing. Up vectors are the direction of the top of the head.
   //   *
   //   * @method orient
@@ -9352,7 +9352,7 @@ listener3d = function () {
   //   * @param  {Number} xValU  Up vector X direction
   //   * @param  {Number} yValU  Up vector Y direction
   //   * @param  {Number} zValU  Up vector Z direction
-  //   * @param  {Number} time  
+  //   * @param  {Number} time
   //   * @return {Array}       All orienation params
   //   */
   p5.Listener3D.prototype.orient = function (xValF, yValF, zValF, xValU, yValU, zValU, time) {
@@ -9480,9 +9480,9 @@ delay = function () {
    *  original source.
    *
    *
-   *  This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.  
-   *  Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>, 
-   *  <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and 
+   *  This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.
+   *  Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>,
+   *  <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and
    *  <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are available.
    *  @class p5.Delay
    *  @extends p5.Effect
@@ -10956,15 +10956,15 @@ soundloop = function () {
    * <div><code>
    * var click;
    * var looper1;
-   * 
+   *
    * function preload() {
    *   click = loadSound('assets/drum.mp3');
    * }
-   * 
+   *
    * function setup() {
    *   //the looper's callback is passed the timeFromNow
-   *   //this value should be used as a reference point from 
-   *   //which to schedule sounds 
+   *   //this value should be used as a reference point from
+   *   //which to schedule sounds
    *   looper1 = new p5.SoundLoop(function(timeFromNow){
    *     click.play(timeFromNow);
    *     background(255 * (looper1.iterations % 2));
@@ -11060,9 +11060,9 @@ soundloop = function () {
    * or to start a loop in synchronization with a loop that is already playing
    * This method will schedule the implicit loop in sync with the explicit master loop
    * i.e. loopToStart.syncedStart(loopToSyncWith)
-   * 
+   *
    * @method  syncedStart
-   * @param  {Object} otherLoop   a p5.SoundLoop to sync with 
+   * @param  {Object} otherLoop   a p5.SoundLoop to sync with
    * @param  {Number} [timeFromNow] Start the loops in sync after timeFromNow seconds
    */
   p5.SoundLoop.prototype.syncedStart = function (otherLoop, timeFromNow) {
@@ -11205,31 +11205,31 @@ compressor = function () {
   /**
    * Compressor is an audio effect class that performs dynamics compression
    * on an audio input source. This is a very commonly used technique in music
-   * and sound production. Compression creates an overall louder, richer, 
+   * and sound production. Compression creates an overall louder, richer,
    * and fuller sound by lowering the volume of louds and raising that of softs.
-   * Compression can be used to avoid clipping (sound distortion due to 
-   * peaks in volume) and is especially useful when many sounds are played 
+   * Compression can be used to avoid clipping (sound distortion due to
+   * peaks in volume) and is especially useful when many sounds are played
    * at once. Compression can be used on indivudal sound sources in addition
-   * to the master output.  
+   * to the master output.
    *
-   * This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.  
-   * Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>, 
-   * <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and 
+   * This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.
+   * Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>,
+   * <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and
    * <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are available.
    *
    * @class p5.Compressor
    * @constructor
    * @extends p5.Effect
    *
-   * 
+   *
    */
   p5.Compressor = function () {
     Effect.call(this);
     /**
-       * The p5.Compressor is built with a <a href="https://www.w3.org/TR/webaudio/#the-dynamicscompressornode-interface" 
+       * The p5.Compressor is built with a <a href="https://www.w3.org/TR/webaudio/#the-dynamicscompressornode-interface"
      *   target="_blank" title="W3 spec for Dynamics Compressor Node">Web Audio Dynamics Compressor Node
      *   </a>
-       * @property {AudioNode} compressor 
+       * @property {AudioNode} compressor
        */
     this.compressor = this.ac.createDynamicsCompressor();
     this.input.connect(this.compressor);
@@ -11239,13 +11239,13 @@ compressor = function () {
   /**
   * Performs the same function as .connect, but also accepts
   * optional parameters to set compressor's audioParams
-  * @method process 
+  * @method process
   *
   * @param {Object} src         Sound source to be connected
-  * 
+  *
   * @param {Number} [attack]     The amount of time (in seconds) to reduce the gain by 10dB,
   *                            default = .003, range 0 - 1
-  * @param {Number} [knee]       A decibel value representing the range above the 
+  * @param {Number} [knee]       A decibel value representing the range above the
   *                            threshold where the curve smoothly transitions to the "ratio" portion.
   *                            default = 30, range 0 - 40
   * @param {Number} [ratio]      The amount of dB change in input for a 1 dB change in output
@@ -11260,11 +11260,11 @@ compressor = function () {
     this.set(attack, knee, ratio, threshold, release);
   };
   /**
-   * Set the paramters of a compressor. 
+   * Set the paramters of a compressor.
    * @method  set
    * @param {Number} attack     The amount of time (in seconds) to reduce the gain by 10dB,
    *                            default = .003, range 0 - 1
-   * @param {Number} knee       A decibel value representing the range above the 
+   * @param {Number} knee       A decibel value representing the range above the
    *                            threshold where the curve smoothly transitions to the "ratio" portion.
    *                            default = 30, range 0 - 40
    * @param {Number} ratio      The amount of dB change in input for a 1 dB change in output
@@ -11293,8 +11293,8 @@ compressor = function () {
   };
   /**
    * Get current attack or set value w/ time ramp
-   * 
-   * 
+   *
+   *
    * @method attack
    * @param {Number} [attack] Attack is the amount of time (in seconds) to reduce the gain by 10dB,
    *                          default = .003, range 0 - 1
@@ -11313,9 +11313,9 @@ compressor = function () {
   };
   /**
    * Get current knee or set value w/ time ramp
-   * 
+   *
    * @method knee
-   * @param {Number} [knee] A decibel value representing the range above the 
+   * @param {Number} [knee] A decibel value representing the range above the
    *                        threshold where the curve smoothly transitions to the "ratio" portion.
    *                        default = 30, range 0 - 40
    * @param {Number} [time]  Assign time value to schedule the change in value
@@ -11336,7 +11336,7 @@ compressor = function () {
    * @method ratio
    *
    * @param {Number} [ratio]      The amount of dB change in input for a 1 dB change in output
-   *                            default = 12, range 1 - 20 
+   *                            default = 12, range 1 - 20
    * @param {Number} [time]  Assign time value to schedule the change in value
    */
   p5.Compressor.prototype.ratio = function (ratio, time) {
@@ -12019,7 +12019,7 @@ audioVoice = function () {
   var p5sound = master;
   /**
    * Base class for monophonic synthesizers. Any extensions of this class
-   * should follow the API and implement the methods below in order to 
+   * should follow the API and implement the methods below in order to
    * remain compatible with p5.PolySynth();
    *
    * @class p5.AudioVoice
@@ -12042,7 +12042,7 @@ audioVoice = function () {
   /**
    * Connect to p5 objects or Web Audio Nodes
    * @method  connect
-   * @param {Object} unit 
+   * @param {Object} unit
    */
   p5.AudioVoice.prototype.connect = function (unit) {
     var u = unit || p5sound.input;
@@ -12768,12 +12768,12 @@ distortion = function () {
    * A Distortion effect created with a Waveshaper Node,
    * with an approach adapted from
    * [Kevin Ennis](http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion)
-   * 
-   * This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.  
-   * Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>, 
-   * <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and 
+   *
+   * This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.
+   * Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href = "/reference/#/p5.Effect/chain">chain()</a>,
+   * <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href = "/reference/#/p5.Effect/connect">connect()</a>, and
    * <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are available.
-   * 
+   *
    * @class p5.Distortion
    * @extends p5.Effect
    * @constructor
