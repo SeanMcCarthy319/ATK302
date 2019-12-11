@@ -26,7 +26,7 @@ function setup() {
       case 1: // the game state
         //game();
         background(100);
-        text("                          Death \n ", 150, 250);
+        text(" AHHHHHHHH \n ", 150, 250);
         textAlign('CENTER');
         textSize(50);
         fill('red');
